@@ -11,7 +11,21 @@ use rayon::prelude::*;
 fn main() {
     let args = cli::Args::parse();
 
+    let paths_exist = args.paths.iter().all(|p| p.exists());
+    if !paths_exist {
+        let missing: Vec<_> = args.paths.iter().filter(|p| !p.exists()).collect();
+        for p in &missing {
+            eprintln!("error: path not found: {}", p.display());
+        }
+        std::process::exit(1);
+    }
+
     let files = walker::collect_files(&args);
+
+    if files.is_empty() {
+        eprintln!("No source files found.");
+        std::process::exit(0);
+    }
 
     let file_stats: Vec<stats::FileStats> = files
         .par_iter()
@@ -20,6 +34,11 @@ fn main() {
             counter::count_file(path, lang, args.max_file_size)
         })
         .collect();
+
+    if file_stats.is_empty() {
+        eprintln!("No recognized source files found.");
+        std::process::exit(0);
+    }
 
     let report = stats::aggregate(file_stats, args.by_file, args.sort);
 
