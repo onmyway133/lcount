@@ -25,19 +25,19 @@ cargo install lcount
 Count a directory:
 
 ```sh
-cloc src/
+lcount src/
 ```
 
 Count multiple paths:
 
 ```sh
-cloc src/ tests/ scripts/
+lcount src/ tests/ scripts/
 ```
 
 Count a single file:
 
 ```sh
-cloc main.rs
+lcount main.rs
 ```
 
 ## Output formats
@@ -45,14 +45,14 @@ cloc main.rs
 Default is a pretty table. Use `--json` or `--csv` for machine-readable output:
 
 ```sh
-cloc src/ --json
-cloc src/ --csv
+lcount src/ --json
+lcount src/ --csv
 ```
 
 ## Per-file breakdown
 
 ```sh
-cloc src/ --by-file
+lcount src/ --by-file
 ```
 
 ## Sorting
@@ -60,9 +60,9 @@ cloc src/ --by-file
 Sort by any column (default: `code`):
 
 ```sh
-cloc src/ --sort lines
-cloc src/ --sort comment
-cloc src/ --sort name
+lcount src/ --sort lines
+lcount src/ --sort comment
+lcount src/ --sort name
 ```
 
 Available values: `lines`, `code`, `blank`, `comment`, `name`.
@@ -72,25 +72,25 @@ Available values: `lines`, `code`, `blank`, `comment`, `name`.
 Skip directories by name:
 
 ```sh
-cloc . --exclude-dir vendor --exclude-dir node_modules
+lcount . --exclude-dir vendor --exclude-dir node_modules
 ```
 
 Skip file extensions:
 
 ```sh
-cloc . --exclude-ext json --exclude-ext lock
+lcount . --exclude-ext json --exclude-ext lock
 ```
 
 Count only specific languages:
 
 ```sh
-cloc . --include-lang Rust --include-lang Python
+lcount . --include-lang Rust --include-lang Python
 ```
 
 Skip files larger than a size limit (in bytes):
 
 ```sh
-cloc . --max-file-size 100000
+lcount . --max-file-size 100000
 ```
 
 ## Git-aware mode
@@ -98,7 +98,7 @@ cloc . --max-file-size 100000
 Use `git ls-files` to collect files, which respects `.gitignore`:
 
 ```sh
-cloc . --git
+lcount . --git
 ```
 
 ## Supported languages
