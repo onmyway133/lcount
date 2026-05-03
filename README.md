@@ -1,4 +1,4 @@
-# rcloc
+# lcount
 
 Count blank, comment, and code lines per language across your codebase. A fast [cloc](https://github.com/aldanial/cloc) alternative written in Rust.
 
@@ -17,7 +17,7 @@ Count blank, comment, and code lines per language across your codebase. A fast [
 ## Install
 
 ```sh
-cargo install rcloc
+cargo install lcount
 ```
 
 ## Usage
