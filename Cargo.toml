@@ -1,5 +1,5 @@
 [package]
-name = "cloc-rust"
+name = "rcloc"
 version = "0.1.0"
 edition = "2021"
 description = "Count blank, comment, and code lines per language — a fast cloc clone in Rust"

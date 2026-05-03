@@ -130,20 +130,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c8d4a3bb8b1e0c1050499d1815f5ab16d04f0959b233085fb31653fbfc9d98f9"
 
 [[package]]
-name = "cloc-rust"
-version = "0.1.0"
-dependencies = [
- "clap",
- "comfy-table",
- "ignore",
- "rayon",
- "serde",
- "serde_json",
- "tempfile",
- "walkdir",
-]
-
-[[package]]
 name = "colorchoice"
 version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -476,6 +462,20 @@ checksum = "22e18b0f0062d30d4230b2e85ff77fdfe4326feb054b9783a3460d8435c8ab91"
 dependencies = [
  "crossbeam-deque",
  "crossbeam-utils",
+]
+
+[[package]]
+name = "rcloc"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "comfy-table",
+ "ignore",
+ "rayon",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "walkdir",
 ]
 
 [[package]]
