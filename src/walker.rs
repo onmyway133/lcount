@@ -2,7 +2,7 @@ use std::path::PathBuf;
 use std::process::Command;
 use walkdir::WalkDir;
 use crate::cli::Args;
-use crate::language::{detect, lang_by_extension};
+use crate::language::detect;
 
 pub fn collect_files(args: &Args) -> Vec<PathBuf> {
     let mut files = if args.git {
