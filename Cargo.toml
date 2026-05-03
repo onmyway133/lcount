@@ -1,8 +1,15 @@
 [package]
-name = "cloc"
+name = "clocrs"
 version = "0.1.0"
 edition = "2021"
-description = "Count blank, comment, and code lines per language"
+description = "Count blank, comment, and code lines per language — a fast cloc clone in Rust"
+license = "MIT"
+repository = "https://github.com/onmyway133/cloc"
+homepage = "https://github.com/onmyway133/cloc"
+documentation = "https://github.com/onmyway133/cloc"
+readme = "README.md"
+keywords = ["cloc", "lines-of-code", "cli", "source-code", "statistics"]
+categories = ["command-line-utilities", "development-tools"]
 
 [[bin]]
 name = "cloc"
