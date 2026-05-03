@@ -35,8 +35,8 @@ fn collect_walk_files(args: &Args) -> Vec<PathBuf> {
             .into_iter()
             .filter_entry(|e| {
                 let name = e.file_name().to_string_lossy();
-                // Always skip .not directory
-                if name == ".not" {
+                // Always skip .not and .nod directories
+                if name == ".not" || name == ".nod" {
                     return false;
                 }
                 // Skip user-supplied --exclude-dir names
